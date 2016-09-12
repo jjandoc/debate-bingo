@@ -15,6 +15,10 @@ body {
   text-align: center;
 }
 
+.card-container {
+  @include clearfix();
+}
+
 .card {
   background: black;
   border: 4px solid black;
