@@ -26,7 +26,7 @@ html(lang='en')
     meta(name='msapplication-TileColor', content='#2F3BA2')
     // Color the status bar on mobile devices
     meta(name='theme-color', content='#2F3BA2')
-    link(href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400|Roboto:400,900', rel='stylesheet', type='text/css')
     link(href='/css/main.css', rel='stylesheet', type='text/css')
   body
     header.page-header
@@ -38,21 +38,30 @@ html(lang='en')
             header.card-header
               h2.card-title Clinton
               .card-controls
-                button.card-reset Clear
-                button.card-refresh Refresh
+                button.card-reset.btn(disabled)
+                  i.fa.fa-undo(aria-hidden='true')
+                  span.sr-only Clear
+                button.card-refresh.btn
+                  i.fa.fa-refresh(aria-hidden='true')
+                  span.sr-only Refresh
             #dem-card.card-body
         .card-panel
           .card.repubs
             header.card-header
               h2.card-title Drumpf
               .card-controls
-                button.card-reset Clear
-                button.card-refresh Refresh
+                button.card-reset.btn(disabled)
+                  i.fa.fa-undo(aria-hidden='true')
+                  span.sr-only Clear
+                button.card-refresh.btn
+                  i.fa.fa-refresh(aria-hidden='true')
+                  span.sr-only Refresh
             #gop-card.card-body
     footer.page-footer
       | #[a(href='https://www.hillaryclinton.com/donate/') Donate] |
       |  #[a(href='https://github.com/jjandoc/debate-bingo') Github]
 
+    script(src='https://use.fontawesome.com/159a9047f0.js')
     script(src='/js/main.min.js')
     // Add your site or app content here
     // Google Analytics: change UA-XXXXX-X to be your site's ID

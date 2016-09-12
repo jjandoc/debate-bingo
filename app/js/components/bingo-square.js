@@ -70,13 +70,14 @@ class BingoSquare {
       const event = new $.Event(eventType);
       event.col = this.col();
       event.row = this.row();
-      this.$el.trigger(event);
 
       if (this._selected) {
         this.$el.addClass(BingoSquare.CssClass.SELECTED);
       } else {
         this.$el.removeClass(BingoSquare.CssClass.SELECTED);
       }
+
+      this.$el.trigger(event);
     }
     return this;
   }

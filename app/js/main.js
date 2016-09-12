@@ -76,12 +76,21 @@ import BingoCard from 'components/bingo-card';
 
   $('.card').each(function() {
     const card = new BingoCard($(this).find('.card-body')[0], terms);
-    $(this).on('click', '.card-reset', () => {
+    $(this).on('click', '.card-reset', e => {
+      $(e.currentTarget).attr('disabled', 'disabled');
       card.reset();
+      $(this).removeClass('bingoed');
     }).on('click', '.card-refresh', () => {
       card.refresh();
+      $(this).removeClass('bingoed');
     }).on(BingoCard.Event.BINGO, () => {
-      alert('bingo!');
+      $(this).addClass('bingoed');
+    }).on('squareSelected', () => {
+      if ($(this).find('.bingo-square.selected').length > 0) {
+        $(this).find('.card-reset').removeAttr('disabled');
+      } else {
+        $(this).find('.card-reset').attr('disabled', 'disabled');
+      }
     });
   });
 })();

@@ -24,7 +24,7 @@
     <meta name="msapplication-TileColor" content="#2F3BA2">
     <!-- Color the status bar on mobile devices-->
     <meta name="theme-color" content="#2F3BA2">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400|Roboto:400,900" rel="stylesheet" type="text/css">
     <link href="/css/main.css" rel="stylesheet" type="text/css">
   </head>
   <body>
@@ -38,8 +38,8 @@
             <header class="card-header">
               <h2 class="card-title">Clinton</h2>
               <div class="card-controls">
-                <button class="card-reset">Clear</button>
-                <button class="card-refresh">Refresh</button>
+                <button class="card-reset btn" disabled><i class="fa fa-undo" aria-hidden="true"></i><span class="sr-only">Clear</span></button>
+                <button class="card-refresh btn"><i class="fa fa-refresh" aria-hidden="true"></i><span class="sr-only">Refresh</span></button>
               </div>
             </header>
             <div class="card-body" id="dem-card"></div>
@@ -50,8 +50,8 @@
             <header class="card-header">
               <h2 class="card-title">Drumpf</h2>
               <div class="card-controls">
-                <button class="card-reset">Clear</button>
-                <button class="card-refresh">Refresh</button>
+                <button class="card-reset btn" disabled><i class="fa fa-undo" aria-hidden="true"></i><span class="sr-only">Clear</span></button>
+                <button class="card-refresh btn"><i class="fa fa-refresh" aria-hidden="true"></i><span class="sr-only">Refresh</span></button>
               </div>
             </header>
             <div class="card-body" id="gop-card"></div>
@@ -62,6 +62,7 @@
     <footer class="page-footer"><a href="https://www.hillaryclinton.com/donate/">Donate</a> |
        <a href="https://github.com/jjandoc/debate-bingo">Github</a>
     </footer>
+    <script src="https://use.fontawesome.com/159a9047f0.js"></script>
     <script src="/js/main.min.js"></script>
     <!-- Add your site or app content here-->
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID-->

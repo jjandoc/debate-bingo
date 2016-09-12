@@ -10,12 +10,13 @@ $color-blue: #0057b8;
 $color-red: #e4002b;
 
 body {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
 }
 
 .page-header {
+  font-weight: 900;
   text-align: center;
 }
 
@@ -65,6 +66,30 @@ body {
     border-radius: 0 0 10px 10px;
     overflow: hidden;
   }
+
+  .bingoed & {
+    position: relative;
+
+    &::before {
+      background: rgba(white, .5);
+      content: '';
+      display: block;
+      z-index: 2;
+      @include position(absolute, 0 0 0 0);
+    }
+    &::after {
+      content: 'BINGO!';
+      font-size: 80px;
+      font-weight: 900;
+      z-index: 3;
+      @include position(absolute, 50% null null 50%);
+      @include transform(translate(-50%, -50%) rotate(-15deg));
+
+      @include media($tablet) {
+        font-size: 160px;
+      }
+    }
+  }
 }
 
 .card-header {
@@ -86,11 +111,31 @@ body {
 
 .card-title {
   float: left;
+  font-weight: 900;
   margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .card-controls {
   float: right;
+
+  .btn {
+    background: none;
+    border: 2px solid white;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+
+    &:hover {
+      background: rgba(white, .2);
+    }
+
+    &[disabled] {
+      opacity: .5;
+    }
+  }
 }
 
 .row {
@@ -101,11 +146,11 @@ body {
   background: white;
   border: 1px solid black;
   box-sizing: border-box;
+  cursor: pointer;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 10px;
-  font-weight: bold;
+  font-weight: 400;
   height: 50px;
-  text-transform: uppercase;
   width: 20%;
   @include align-items(center);
   @include display(flex);
@@ -119,10 +164,10 @@ body {
     position: relative;
 
     &::after {
-      content: 'x';
-      font-family: Helvetica, sans-serif;
+      content: 'X';
+      font-family: 'Roboto', sans-serif;
       font-size: 40px;
-      font-weight: bold;
+      font-weight: 900;
       opacity: .5;
       @include position(absolute, 50% null null 50%);
       @include transform(translate(-50%, -50%));
