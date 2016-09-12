@@ -33,20 +33,23 @@ html(lang='en')
       h1 2016 Presidential Debate Bingo
     main
       .card-container
-        .card
+        .card.dems
           header.card-header
-            h2 Clinton
-            button.card-reset Clear
-            button.card-refresh Refresh
+            h2.card-title Clinton
+            .card-controls
+              button.card-reset Clear
+              button.card-refresh Refresh
           #dem-card.card-body
-        .card
+        .card.repubs
           header.card-header
-            h2 Drumpf
-            button.card-reset Clear
-            button.card-refresh Refresh
+            h2.card-title Drumpf
+            .card-controls
+              button.card-reset Clear
+              button.card-refresh Refresh
           #gop-card.card-body
-    footer
-      a(href='https://github.com/jjandoc/debate-bingo') Github
+    footer.page-footer
+      | #[a(href='https://www.hillaryclinton.com/donate/') Donate] |
+      |  #[a(href='https://github.com/jjandoc/debate-bingo') Github]
 
     script(src='/js/main.min.js')
     // Add your site or app content here

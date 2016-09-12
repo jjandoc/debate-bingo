@@ -7,16 +7,47 @@ $desktop: new-breakpoint(min-width 1024px);
 body {
   font-family: 'Roboto Condensed', sans-serif;
 }
+
+.page-header {
+  text-align: center;
+}
+
 .card {
+  margin: 0 auto 50px;
   @include media($desktop) {
     float: left;
-    margin: 0 1%;
+    margin: 0 1% 20px;
     width: 48%;
   }
 }
 
 .card-body {
   border: 1px solid black;
+}
+
+.card-header {
+  border: 2px solid black;
+  border-width: 2px 2px 0;
+  color: white;
+  padding: 20px;
+  @include clearfix();
+
+  .dems & {
+    background: blue;
+  }
+
+  .repubs & {
+    background: red;
+  }
+}
+
+.card-title {
+  float: left;
+  margin: 0;
+}
+
+.card-controls {
+  float: right;
 }
 
 .row {
@@ -54,4 +85,8 @@ body {
     text-overflow: ellipsis;
     width: 100%;
   }
+}
+
+.page-footer {
+  text-align: center;
 }
