@@ -181,6 +181,12 @@ gulp.task('default', ['clean'], cb =>
   )
 );
 
+// Deploys the dist directory to the gh-pages branch.
+gulp.task('deploy', () => {
+  return gulp.src('./dist/**/*')
+    .pipe($.ghPages());
+});
+
 // Run PageSpeed Insights
 gulp.task('pagespeed', cb =>
   // Update the below URL to the public URL of your site
@@ -212,8 +218,8 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
     cacheId: pkg.name || 'web-starter-kit',
     // sw-toolbox.js needs to be listed first. It sets up methods used in runtime-caching.js.
     importScripts: [
-      'scripts/sw/sw-toolbox.js',
-      'scripts/sw/runtime-caching.js'
+      'js/sw/sw-toolbox.js',
+      'js/sw/runtime-caching.js'
     ],
     staticFileGlobs: [
       // Add/remove glob patterns to match your directory setup.
