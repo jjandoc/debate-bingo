@@ -26,15 +26,29 @@ html(lang='en')
     meta(name='msapplication-TileColor', content='#2F3BA2')
     // Color the status bar on mobile devices
     meta(name='theme-color', content='#2F3BA2')
+    link(href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700', rel='stylesheet', type='text/css')
     link(href='/css/main.css', rel='stylesheet', type='text/css')
   body
-    header
-      h1 Hello world!
+    header.page-header
+      h1 2016 Presidential Debate Bingo
     main
-      p body here
+      .card-container
+        .card
+          header.card-header
+            h2 Clinton
+            button.card-reset Clear
+            button.card-refresh Refresh
+          #dem-card.card-body
+        .card
+          header.card-header
+            h2 Drumpf
+            button.card-reset Clear
+            button.card-refresh Refresh
+          #gop-card.card-body
     footer
-      p footer here
+      a(href='https://github.com/jjandoc/debate-bingo') Github
 
+    script(src='/js/main.min.js')
     // Add your site or app content here
     // Google Analytics: change UA-XXXXX-X to be your site's ID
     script.

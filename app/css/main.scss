@@ -1,2 +1,57 @@
 @import 'bourbon';
 @import 'neat';
+
+$tablet: new-breakpoint(min-width 768px);
+$desktop: new-breakpoint(min-width 1024px);
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.card {
+  @include media($desktop) {
+    float: left;
+    margin: 0 1%;
+    width: 48%;
+  }
+}
+
+.card-body {
+  border: 1px solid black;
+}
+
+.row {
+  @include display(flex);
+}
+
+.bingo-square {
+  background: white;
+  border: 1px solid black;
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  height: 50px;
+  text-transform: uppercase;
+  width: 20%;
+  @include align-items(center);
+  @include display(flex);
+
+  @include media($tablet) {
+    font-size: 16px;
+    height: 100px;
+  }
+
+  &.free,
+  &.selected {
+    background: grey;
+    color: white;
+  }
+
+  span {
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+}

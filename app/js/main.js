@@ -1,22 +1,7 @@
-/*!
- *
- *  Web Starter Kit
- *  Copyright 2015 Google Inc. All rights reserved.
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *    https://www.apache.org/licenses/LICENSE-2.0
- *
- *  Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License
- *
- */
 /* eslint-env browser */
+import $ from 'jquery';
+import BingoCard from 'components/bingo-card';
+
 (function() {
   'use strict';
 
@@ -73,4 +58,28 @@
   }
 
   // Your custom JavaScript goes here
+  const terms = ['IPhone', 'helvetica', 'williamsburg', 'kinfolk', 'whatever',
+      'butcher', 'photo', 'booth', 'Af', 'biodiesel', 'next', 'level',
+      'quinoa', 'tote', 'bag', 'vegan', 'ethical', 'ugh', 'pork', 'belly',
+      'prism', 'Normcore', 'single-origin', 'coffee', 'hammock', 'small',
+      'batch', 'neutra', 'cronut', 'Retro', 'raw', 'denim', 'austin',
+      'readymade', 'vice', 'fixie', 'pug', 'schlitz', 'jean', 'shorts',
+      'iceland', 'paleo', 'drinking', 'vinegar', 'hashtag', 'coloring', 'book',
+      'Authentic', 'chambray', 'bespoke', 'jianbing', 'put', 'a', 'bird', 'on',
+      'it', 'chicharrones', 'iPhone', 'street', 'art', 'meditation',
+      'sustainable', 'af', 'banh', 'mi', 'cliche', 'banjo', 'Meditation',
+      'blue', 'bottle', 'viral', 'schlitz', 'distillery', 'raw', 'denim',
+      'locavore', 'chicharrones', 'fingerstache', 'Roof', 'party', 'celiac',
+      'try-hard', 'lyft', '8-bit', 'poke', 'pug', 'man', 'bun', 'hammock',
+      'offal', 'tbh', 'trust', 'fund', 'single-origin', 'coffee', 'small',
+      'batch'];
+
+  $('.card').each(function() {
+    const card = new BingoCard($(this).find('.card-body')[0], terms);
+    $(this).on('click', '.card-reset', () => {
+      card.reset();
+    }).on('click', '.card-refresh', () => {
+      card.refresh();
+    })
+  });
 })();
