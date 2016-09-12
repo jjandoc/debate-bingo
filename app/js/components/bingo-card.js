@@ -43,7 +43,6 @@ class BingoCard {
       if (this.isBingo(e.col, e.row)) {
         this._hasBingoed = true;
         this._$el.trigger(BingoCard.Event.BINGO);
-        console.log('bingo!');
       }
     });
     this.refresh();

@@ -80,6 +80,8 @@ import BingoCard from 'components/bingo-card';
       card.reset();
     }).on('click', '.card-refresh', () => {
       card.refresh();
-    })
+    }).on(BingoCard.Event.BINGO, () => {
+      alert('bingo!');
+    });
   });
 })();
