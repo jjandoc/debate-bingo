@@ -31,35 +31,33 @@ html(lang='en')
   body
     header.page-header
       h1 2016 Presidential Debate Bingo
-    main
-      .card-container
-        .card-panel
-          .card.dems
-            header.card-header
-              h2.card-title Clinton
-              .card-controls
-                button.card-reset.btn(disabled)
-                  i.fa.fa-undo(aria-hidden='true')
-                  span.sr-only Clear
-                button.card-refresh.btn
-                  i.fa.fa-refresh(aria-hidden='true')
-                  span.sr-only Refresh
-            #dem-card.card-body
-        .card-panel
-          .card.repubs
-            header.card-header
-              h2.card-title Drumpf
-              .card-controls
-                button.card-reset.btn(disabled)
-                  i.fa.fa-undo(aria-hidden='true')
-                  span.sr-only Clear
-                button.card-refresh.btn
-                  i.fa.fa-refresh(aria-hidden='true')
-                  span.sr-only Refresh
-            #gop-card.card-body
+    main.page-content
+      .card-panel
+        .card.dems
+          header.card-header
+            h2.card-title Clinton
+            .card-controls
+              button.card-reset.btn(disabled)
+                i.fa.fa-undo(aria-hidden='true')
+                span.sr-only Clear
+              button.card-refresh.btn
+                i.fa.fa-refresh(aria-hidden='true')
+                span.sr-only Refresh
+          #dem-card.card-body
+      .card-panel
+        .card.repubs
+          header.card-header
+            h2.card-title Trump
+            .card-controls
+              button.card-reset.btn(disabled)
+                i.fa.fa-undo(aria-hidden='true')
+                span.sr-only Clear
+              button.card-refresh.btn
+                i.fa.fa-refresh(aria-hidden='true')
+                span.sr-only Refresh
+          #gop-card.card-body
     footer.page-footer
-      | #[a(href='https://www.hillaryclinton.com/donate/') Donate] |
-      |  #[a(href='https://github.com/jjandoc/debate-bingo') Github]
+      a(href='https://www.hillaryclinton.com/donate/') Donate
 
     script(src='https://use.fontawesome.com/159a9047f0.js')
     script(src='/js/main.min.js')

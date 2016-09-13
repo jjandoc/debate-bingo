@@ -1,6 +1,8 @@
 /* eslint-env browser */
 import $ from 'jquery';
 import BingoCard from 'components/bingo-card';
+import clintonTerms from 'terms/clinton';
+import trumpTerms from 'terms/trump';
 
 (function() {
   'use strict';
@@ -58,23 +60,8 @@ import BingoCard from 'components/bingo-card';
   }
 
   // Your custom JavaScript goes here
-  const terms = ['IPhone', 'helvetica', 'williamsburg', 'kinfolk', 'whatever',
-      'butcher', 'photo', 'booth', 'Af', 'biodiesel', 'next', 'level',
-      'quinoa', 'tote', 'bag', 'vegan', 'ethical', 'ugh', 'pork', 'belly',
-      'prism', 'Normcore', 'single-origin', 'coffee', 'hammock', 'small',
-      'batch', 'neutra', 'cronut', 'Retro', 'raw', 'denim', 'austin',
-      'readymade', 'vice', 'fixie', 'pug', 'schlitz', 'jean', 'shorts',
-      'iceland', 'paleo', 'drinking', 'vinegar', 'hashtag', 'coloring', 'book',
-      'Authentic', 'chambray', 'bespoke', 'jianbing', 'put', 'a', 'bird', 'on',
-      'it', 'chicharrones', 'iPhone', 'street', 'art', 'meditation',
-      'sustainable', 'af', 'banh', 'mi', 'cliche', 'banjo', 'Meditation',
-      'blue', 'bottle', 'viral', 'schlitz', 'distillery', 'raw', 'denim',
-      'locavore', 'chicharrones', 'fingerstache', 'Roof', 'party', 'celiac',
-      'try-hard', 'lyft', '8-bit', 'poke', 'pug', 'man', 'bun', 'hammock',
-      'offal', 'tbh', 'trust', 'fund', 'single-origin', 'coffee', 'small',
-      'batch'];
-
   $('.card').each(function() {
+    const terms = $(this).hasClass('dems') ? clintonTerms : trumpTerms;
     const card = new BingoCard($(this).find('.card-body')[0], terms);
     $(this).on('click', '.card-reset', e => {
       $(e.currentTarget).attr('disabled', 'disabled');

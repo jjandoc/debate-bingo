@@ -12,7 +12,10 @@ $color-red: #e4002b;
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
+  min-height: 100vh;
   padding: 0;
+  @include display(flex);
+  @include flex-direction(column);
 }
 
 .page-header {
@@ -20,30 +23,26 @@ body {
   text-align: center;
 }
 
-.card-container {
-  @include clearfix();
+.page-content {
+  @include flex(1);
+
+  @include media($desktop) {
+    padding: 0 10px;
+    @include align-items(center);
+    @include display(flex);
+    @include justify-content(center);
+  }
 }
 
 .card-panel {
   // height: 100vh;
-  padding: 0 10px;
+  box-sizing: border-box;
+  padding: 0 1%;
   @include clearfix();
-  @include display(flex);
-  @include align-items(center);
+  @include flex(1);
 
-  @include media($desktop) {
-    display: block;
-    float: left;
-    height: auto;
-    width: 50%;
-
-    &:nth-child(odd) {
-      text-align: right;
-    }
-
-    &:nth-child(event) {
-      text-align: left;
-    }
+  &:nth-child(odd) {
+    text-align: right;
   }
 }
 
@@ -104,7 +103,9 @@ body {
   border-width: 2px 2px 0;
   color: white;
   padding: 10px;
-  @include clearfix();
+  @include align-items(center);
+  @include display(flex);
+  @include justify-content(space-between);
 
   @include media($tablet) {
     padding: 20px;
@@ -119,7 +120,6 @@ body {
 }
 
 .card-title {
-  float: left;
   font-weight: 900;
   margin: 0;
   letter-spacing: 2px;
@@ -127,7 +127,6 @@ body {
 }
 
 .card-controls {
-  float: right;
 
   .btn {
     background: none;
@@ -136,6 +135,7 @@ body {
     color: white;
     cursor: pointer;
     margin-left: 10px;
+    @include appearance(none);
 
     &:hover {
       background: rgba(white, .2);
@@ -168,6 +168,7 @@ body {
   @include media($tablet) {
     font-size: 16px;
     height: 100px;
+    padding: 5px;
   }
 
   &.selected {
@@ -220,5 +221,6 @@ body {
 }
 
 .page-footer {
+  padding: 20px;
   text-align: center;
 }

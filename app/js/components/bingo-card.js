@@ -199,6 +199,6 @@ BingoCard.SIZE = 5;
  * String value for a free square.
  * @constant {number}
  */
-BingoCard.FREE = 'Free';
+BingoCard.FREE = 'America';
 
 export default BingoCard;
