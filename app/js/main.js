@@ -1,5 +1,6 @@
 /* eslint-env browser */
 import $ from 'jquery';
+import _ from 'underscore';
 import BingoCard from 'components/bingo-card';
 import clintonTerms from 'terms/clinton';
 import trumpTerms from 'terms/trump';
@@ -60,6 +61,10 @@ import trumpTerms from 'terms/trump';
   }
 
   // Your custom JavaScript goes here
+  const app = {
+    cards: []
+  };
+
   $('.card').each(function() {
     const terms = $(this).hasClass('dems') ? clintonTerms : trumpTerms;
     const card = new BingoCard($(this).find('.card-body')[0], terms);
@@ -79,5 +84,16 @@ import trumpTerms from 'terms/trump';
         $(this).find('.card-reset').attr('disabled', 'disabled');
       }
     });
+    app.cards.push(card);
+  });
+
+  $(document).on('click', '.refresh-all', e => {
+    e.preventDefault();
+    _.each(app.cards, card => {
+      card.refresh();
+    });
+  }).on('click', '.print', e => {
+    e.preventDefault();
+    window.print();
   });
 })();

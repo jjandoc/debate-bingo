@@ -31,6 +31,24 @@ html(lang='en')
   body
     header.page-header
       h1 2016 Presidential Debate Bingo
+      nav.page-nav
+        ul.inline-list
+          li
+            a(href='https://www.hillaryclinton.com/donate/').btn
+              i.fa.fa-dollar(aria-hidden='true')
+              span.sr-only Donate
+          li
+            button.btn
+              i.fa.fa-question(aria-hidden='true')
+              span.sr-only About
+          li
+            button.btn.refresh-all
+              i.fa.fa-refresh(aria-hidden='true')
+              span.sr-only Refresh all
+          li
+            button.btn.print
+              i.fa.fa-print(aria-hidden='true')
+              span.sr-only Print
     main.page-content
       .card-panel
         .card.dems
@@ -57,7 +75,22 @@ html(lang='en')
                 span.sr-only Refresh
           #gop-card.card-body
     footer.page-footer
-      a(href='https://www.hillaryclinton.com/donate/') Donate
+      nav.share-nav
+        ul.inline-list
+          li
+            | Share
+          li
+            a(href='#').btn.share-btn
+              i.fa.fa-twitter
+              span.sr-only Twitter
+          li
+            a(href='#').btn.share-btn
+              i.fa.fa-facebook
+              span.sr-only Facebook
+          li
+            a(href='#').btn.share-btn
+              i.fa.fa-google-plus
+              span.sr-only Google+
 
     script(src='https://use.fontawesome.com/159a9047f0.js')
     script(src='/js/main.min.js')

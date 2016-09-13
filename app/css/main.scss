@@ -3,6 +3,7 @@
 
 @import 'global/normalize';
 
+$landscape-mobile: new-breakpoint(min-width 640px);
 $tablet: new-breakpoint(min-width 768px);
 $desktop: new-breakpoint(min-width 1024px);
 
@@ -18,9 +19,79 @@ body {
   @include flex-direction(column);
 }
 
-.page-header {
-  font-weight: 900;
+.btn {
+  background: none;
+  border: 2px solid black;
+  border-radius: 50px;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 27.5px;
+  height: 30px;
+  min-width: 30px;
+  padding: 0;
   text-align: center;
+  text-decoration: none;
+  @include appearance(none);
+
+  &:link,
+  &:visited {
+    color: black;
+  }
+}
+
+.page-header {
+  box-sizing: border-box;
+  font-weight: 900;
+  padding: 20px;
+  text-align: center;
+  @include display(flex);
+  @include flex-direction(column);
+
+  @include media($landscape-mobile) {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 20px 0 10px;
+    width: 100%;
+    @include align-items(center);
+    @include flex-direction(row);
+    @include justify-content(space-between);
+  }
+
+  @include media($desktop) {
+    max-width: none;
+    padding: 20px 20px 10px;
+  }
+
+  h1 {
+    font-size: 1.1em;
+    margin: 0 0 10px;
+
+    @include media($tablet) {
+      font-size: 1.5em;
+      margin: 0;
+    }
+  }
+}
+
+.inline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    margin: 0 5px;
+  }
+}
+
+.page-nav {
+  li {
+    @include media($tablet) {
+      margin: 0 0 0 10px;
+    }
+  }
 }
 
 .page-content {
@@ -136,13 +207,9 @@ body {
 
 .card-controls {
   .btn {
-    background: none;
-    border: 2px solid white;
-    border-radius: 50px;
+    border-color: white;
     color: white;
-    cursor: pointer;
     margin-left: 10px;
-    @include appearance(none);
 
     &:hover {
       background: rgba(white, .2);
