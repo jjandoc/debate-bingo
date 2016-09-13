@@ -197,6 +197,8 @@ body {
 }
 
 .free {
+  text-transform: uppercase;
+
   .dems & {
     background: $color-blue;
     color: white;
