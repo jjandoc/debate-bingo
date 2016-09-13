@@ -7,8 +7,10 @@ $landscape-mobile: new-breakpoint(min-width 640px);
 $tablet: new-breakpoint(min-width 768px);
 $desktop: new-breakpoint(min-width 1024px);
 
+$color-black: #333;
 $color-blue: #0057b8;
 $color-red: #e4002b;
+$color-white: #fff;
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -21,10 +23,10 @@ body {
 
 .btn {
   background: none;
-  border: 2px solid black;
+  border: 2px solid $color-black;
   border-radius: 50px;
   box-sizing: border-box;
-  color: black;
+  color: $color-black;
   cursor: pointer;
   display: inline-block;
   line-height: 27.5px;
@@ -34,10 +36,15 @@ body {
   text-align: center;
   text-decoration: none;
   @include appearance(none);
+  @include transition(all, 200ms);
 
   &:link,
   &:visited {
-    color: black;
+    color: $color-black;
+  }
+
+  &:hover {
+    background: rgba($color-black, .2);
   }
 }
 
@@ -126,8 +133,8 @@ body {
 }
 
 .card {
-  background: black;
-  border: 4px solid black;
+  background: $color-black;
+  border: 4px solid $color-black;
   border-radius: 10px;
   box-shadow: 4px 4px 10px rgba(0,0,0,.5);
   box-sizing: border-box;
@@ -142,7 +149,7 @@ body {
 }
 
 .card-body {
-  background: black;
+  background: $color-black;
   padding: 1px;
 
   .row:last-child {
@@ -154,7 +161,7 @@ body {
     position: relative;
 
     &::before {
-      background: rgba(white, .5);
+      background: rgba($color-white, .5);
       border-radius: 0 0 10px 10px;
       content: '';
       display: block;
@@ -177,10 +184,10 @@ body {
 }
 
 .card-header {
-  border: 2px solid black;
+  border: 2px solid $color-black;
   border-radius: 10px 10px 0 0;
   border-width: 2px 2px 0;
-  color: white;
+  color: $color-white;
   padding: 10px;
   @include align-items(center);
   @include display(flex);
@@ -207,12 +214,12 @@ body {
 
 .card-controls {
   .btn {
-    border-color: white;
-    color: white;
+    border-color: $color-white;
+    color: $color-white;
     margin-left: 10px;
 
     &:hover {
-      background: rgba(white, .2);
+      background: rgba($color-white, .2);
     }
 
     &[disabled] {
@@ -226,8 +233,8 @@ body {
 }
 
 .bingo-square {
-  background: white;
-  border: 1px solid black;
+  background: $color-white;
+  border: 1px solid $color-black;
   box-sizing: border-box;
   cursor: pointer;
   font-family: 'Roboto Condensed', sans-serif;
@@ -285,12 +292,12 @@ body {
 
   .dems & {
     background: $color-blue;
-    color: white;
+    color: $color-white;
   }
 
   .repubs & {
     background: $color-red;
-    color: white;
+    color: $color-white;
   }
 }
 

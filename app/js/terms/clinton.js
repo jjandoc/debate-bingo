@@ -12,6 +12,7 @@ const terms = [
   'education',
   'equality',
   'fair',
+  'families',
   'first responders',
   'foreign aid',
   'future',
@@ -19,6 +20,7 @@ const terms = [
   'global warming',
   'green energy',
   'healthcare',
+  'help',
   'human rights',
   'immigration',
   'infrastructure',
@@ -29,6 +31,7 @@ const terms = [
   'livable wage',
   'middle class',
   'minimum wage',
+  'mothers',
   'opportunity',
   'racism',
   'reform',
@@ -38,7 +41,8 @@ const terms = [
   'stronger',
   'our troops',
   'together',
-  'veterans'
+  'veterans',
+  'young people'
 ];
 
 export default terms;

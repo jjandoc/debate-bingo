@@ -13,6 +13,7 @@ const terms = [
   'The Chinese',
   'The Mexicans',
   'The Iranians',
+  'ashamed',
   'ban Muslims',
   'believe me',
   'biased',
