@@ -25,11 +25,16 @@ body {
 }
 
 .card-panel {
+  // height: 100vh;
   padding: 0 10px;
   @include clearfix();
+  @include display(flex);
+  @include align-items(center);
 
   @include media($desktop) {
+    display: block;
     float: left;
+    height: auto;
     width: 50%;
 
     &:nth-child(odd) {
@@ -98,9 +103,12 @@ body {
   border-radius: 10px 10px 0 0;
   border-width: 2px 2px 0;
   color: white;
-  padding: 20px;
+  padding: 10px;
   @include clearfix();
 
+  @include media($tablet) {
+    padding: 20px;
+  }
   .dems & {
     background: $color-blue;
   }
@@ -151,7 +159,8 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 10px;
   font-weight: 400;
-  height: 50px;
+  height: 45px;
+  padding: 0;
   width: 20%;
   @include align-items(center);
   @include display(flex);
