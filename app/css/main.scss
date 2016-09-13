@@ -24,12 +24,14 @@ body {
 }
 
 .page-content {
+  @include display(flex);
   @include flex(1);
+  @include flex-direction(column);
 
   @include media($desktop) {
     padding: 0 10px;
     @include align-items(center);
-    @include display(flex);
+    @include flex-direction(row);
     @include justify-content(center);
   }
 }
@@ -38,11 +40,17 @@ body {
   // height: 100vh;
   box-sizing: border-box;
   padding: 0 1%;
+  @include align-items(center);
   @include clearfix();
+  @include display(flex);
   @include flex(1);
 
-  &:nth-child(odd) {
-    text-align: right;
+  @include media($desktop) {
+    @include justify-content(flex-start);
+
+    &:nth-child(odd) {
+      @include justify-content(flex-end);
+    }
   }
 }
 
@@ -58,7 +66,7 @@ body {
 
   @include media($desktop) {
     display: inline-block;
-    margin-bottom: 20px;
+    margin: 0;
   }
 }
 
@@ -127,7 +135,6 @@ body {
 }
 
 .card-controls {
-
   .btn {
     background: none;
     border: 2px solid white;
