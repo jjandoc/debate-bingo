@@ -1,11 +1,14 @@
 /* eslint-env browser */
-import $ from 'jquery';
+import jQuery from 'jquery';
 import _ from 'underscore';
 import BingoCard from 'components/bingo-card';
 import clintonTerms from 'terms/clinton';
 import trumpTerms from 'terms/trump';
 
-(function() {
+window.jQuery = jQuery;
+require('vendor/tipr');
+
+(function(window, $) {
   'use strict';
 
   // Check to make sure service workers are supported in the current browser,
@@ -96,4 +99,6 @@ import trumpTerms from 'terms/trump';
     e.preventDefault();
     window.print();
   });
-})();
+
+  $('.tip').tipr();
+})(window, jQuery);

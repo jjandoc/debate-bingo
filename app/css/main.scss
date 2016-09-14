@@ -2,6 +2,7 @@
 @import 'neat';
 
 @import 'global/normalize';
+@import 'tipr';
 
 $landscape-mobile: new-breakpoint(min-width 640px);
 $tablet: new-breakpoint(min-width 768px);
@@ -115,7 +116,6 @@ body {
 }
 
 .card-panel {
-  // height: 100vh;
   box-sizing: border-box;
   padding: 0 1%;
   @include align-items(center);
@@ -150,7 +150,12 @@ body {
 
 .card-body {
   background: $color-black;
-  padding: 1px;
+  border: 1px solid $color-black;
+  border-radius: 0 0 10px 10px;
+
+  .row {
+    background: $color-white;
+  }
 
   .row:last-child {
     border-radius: 0 0 10px 10px;
@@ -233,7 +238,7 @@ body {
 }
 
 .bingo-square {
-  background: $color-white;
+  background: transparent;
   border: 1px solid $color-black;
   box-sizing: border-box;
   cursor: pointer;
@@ -242,7 +247,9 @@ body {
   font-weight: 400;
   height: 45px;
   padding: 0;
+  position: relative;
   width: 20%;
+  z-index: 1;
   @include align-items(center);
   @include display(flex);
 
@@ -252,30 +259,46 @@ body {
     padding: 5px;
   }
 
-  &.selected {
-    position: relative;
+  &::before {
+    /*content: 'X';
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    opacity: .5;*/
+    background-size: cover;
+    content: '';
+    display: block;
+    opacity: 0;
+    z-index: -1;
+    @include position(absolute, 50% null null 50%);
+    @include transform(translate(-50%, -50%));
+    @include transition(all, 200ms);
 
-    &::after {
-      content: 'X';
-      font-family: 'Roboto', sans-serif;
-      font-size: 40px;
-      font-weight: 900;
-      opacity: .5;
-      @include position(absolute, 50% null null 50%);
-      @include transform(translate(-50%, -50%));
+    @include media($tablet) {
+      font-size: 80px;
+    }
+
+    .dems & {
+      background-image: url(/img/donkey.png);
+      @include size(40px);
 
       @include media($tablet) {
-        font-size: 80px;
-      }
-
-      .dems & {
-        color: $color-blue;
-      }
-
-      .repubs & {
-        color: $color-red;
+        @include size(70px);
       }
     }
+
+    .repubs & {
+      background-image: url(/img/elephant.png);
+      @include size(46px 40px);
+
+      @include media($tablet) {
+        @include size(70px 62px);
+      }
+    }
+  }
+
+  &.selected::before {
+    opacity: .3;
   }
 
   span {

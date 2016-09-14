@@ -1,10 +1,10 @@
 {
   "version": "1.0.0",
-  "name": "Web Starter Kit",
+  "name": "Political Bingo",
   "launch_path": "/index.html",
-  "description": "A front-end template that helps you build fast, modern mobile web apps.",
+  "description": "Play along.",
   "icons": {
-    "128": "/images/touch/icon-128x128.png"
+    "128": "/img/touch/icon-128x128.png"
   },
   "developer": {
     "name": "",
@@ -18,8 +18,8 @@
   },
   "locales": {
     "en": {
-      "name": "Web Starter Kit",
-      "description": "A front-end template that helps you build fast, modern mobile web apps."
+      "name": "Political Bingo",
+      "description": "Play along."
     }
   }
 }

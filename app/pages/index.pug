@@ -34,19 +34,19 @@ html(lang='en')
       nav.page-nav
         ul.inline-list
           li
-            a(href='https://www.hillaryclinton.com/donate/').btn
+            a(href='https://www.hillaryclinton.com/donate/', data-tip='Donate').btn.tip
               i.fa.fa-dollar(aria-hidden='true')
               span.sr-only Donate
           li
-            button.btn
+            button.btn.tip(data-tip='About')
               i.fa.fa-question(aria-hidden='true')
               span.sr-only About
           li
-            button.btn.refresh-all
+            button.btn.refresh-all.tip(data-tip='Refresh Cards')
               i.fa.fa-refresh(aria-hidden='true')
               span.sr-only Refresh all
           li
-            button.btn.print
+            button.btn.print.tip(data-tip='Print')
               i.fa.fa-print(aria-hidden='true')
               span.sr-only Print
     main.page-content
@@ -55,10 +55,10 @@ html(lang='en')
           header.card-header
             h2.card-title Clinton
             .card-controls
-              button.card-reset.btn(disabled)
+              button.card-reset.btn.tip(data-tip='Clear', disabled)
                 i.fa.fa-undo(aria-hidden='true')
                 span.sr-only Clear
-              button.card-refresh.btn
+              button.card-refresh.btn.tip(data-tip='Refresh')
                 i.fa.fa-refresh(aria-hidden='true')
                 span.sr-only Refresh
           #dem-card.card-body
@@ -67,10 +67,10 @@ html(lang='en')
           header.card-header
             h2.card-title Trump
             .card-controls
-              button.card-reset.btn(disabled)
+              button.card-reset.btn.tip(data-tip='Clear', disabled)
                 i.fa.fa-undo(aria-hidden='true')
                 span.sr-only Clear
-              button.card-refresh.btn
+              button.card-refresh.btn.tip(data-tip='Refresh')
                 i.fa.fa-refresh(aria-hidden='true')
                 span.sr-only Refresh
           #gop-card.card-body
@@ -80,15 +80,15 @@ html(lang='en')
           li
             | Share
           li
-            a(href='#').btn.share-btn
+            a(href='#', data-tip='Tweet', data-mode='top').btn.share-btn.tip
               i.fa.fa-twitter
               span.sr-only Twitter
           li
-            a(href='#').btn.share-btn
+            a(href='#', data-tip='Share', data-mode='top').btn.share-btn.tip
               i.fa.fa-facebook
               span.sr-only Facebook
           li
-            a(href='#').btn.share-btn
+            a(href='#', data-tip='Share', data-mode='top').btn.share-btn.tip
               i.fa.fa-google-plus
               span.sr-only Google+
 
