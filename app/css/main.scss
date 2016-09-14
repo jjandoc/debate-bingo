@@ -2,7 +2,7 @@
 @import 'neat';
 
 @import 'global/normalize';
-@import 'tipr';
+@import 'vendor/tipr';
 
 $landscape-mobile: new-breakpoint(min-width 640px);
 $tablet: new-breakpoint(min-width 768px);
@@ -260,11 +260,6 @@ body {
   }
 
   &::before {
-    /*content: 'X';
-    font-family: 'Roboto', sans-serif;
-    font-size: 40px;
-    font-weight: 900;
-    opacity: .5;*/
     background-size: cover;
     content: '';
     display: block;
@@ -290,6 +285,7 @@ body {
     .repubs & {
       background-image: url(/img/elephant.png);
       @include size(46px 40px);
+      @include transform(translate(-43%, -50%));
 
       @include media($tablet) {
         @include size(70px 62px);
