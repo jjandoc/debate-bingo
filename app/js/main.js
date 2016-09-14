@@ -72,7 +72,7 @@ require('vendor/tipr');
     const terms = $(this).hasClass('dems') ? clintonTerms : trumpTerms;
     const card = new BingoCard($(this).find('.card-body')[0], terms);
     $(this).on('click', '.card-reset', e => {
-      $(e.currentTarget).attr('disabled', 'disabled');
+      $(e.currentTarget).attr('disabled', 'disabled').trigger('mouseout');
       card.reset();
       $(this).removeClass('bingoed');
     }).on('click', '.card-refresh', () => {
