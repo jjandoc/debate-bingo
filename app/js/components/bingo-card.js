@@ -110,7 +110,7 @@ class BingoCard {
    */
   isBingo(col, row) {
     return this._isRowBingo(row) || this._isColumnBingo(col) ||
-        this._isDiaganolBingo(col, row);
+        this._isDiagonalBingo(col, row);
   }
 
   /**
@@ -147,9 +147,9 @@ class BingoCard {
    * @private
    * @param {number} col - Column index.
    * @param {number} row - Row index.
-   * @return {boolean} Whether a diaganol bingo has been completed.
+   * @return {boolean} Whether a diagonal bingo has been completed.
    */
-  _isDiaganolBingo(col, row) {
+  _isDiagonalBingo(col, row) {
     if (col === row) {
       // Check a top left to bottom right diaganol.
       for (let i = 0; i < BingoCard.SIZE; i++) {
