@@ -1,7 +1,7 @@
 - var siteName = 'Political Bingo';
 - var metaDesc = `Make the presidential debates fun with these bingo cards covering Donald Trump and Hillary Clinton's favorite topics. Drinking optional!`;
 - var shareUrl = 'https://www.politicalbingo.com';
-- var tweetCopy = `Political bingo: this election isn’t a game, but you can make one out of the debates!`
+- var tweetCopy = `This election isn’t a game, but you can make one out of the debates!`
 
 doctype html
 html(lang='en')
@@ -79,7 +79,7 @@ html(lang='en')
           li
             | Share
           li
-            a(href=`https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetCopy)}&url=${encodeURIComponent(shareUrl)}`, data-tip='Tweet', data-mode='top').btn.btn-icon.share-btn.tip
+            a(href=`https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetCopy)}&url=${encodeURIComponent(shareUrl)}&hashtags=PoliticalBingo,PresidentialDebate`, data-tip='Tweet', data-mode='top').btn.btn-icon.share-btn.tip
               i.fa.fa-twitter(aria-hidden='true')
               span.sr-only Twitter
           li
