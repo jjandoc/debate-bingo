@@ -68,8 +68,8 @@ See also the list of [contributors](https://github.com/jjandoc/debate-bingo/cont
 
 ## License
 
-Coming soon.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
-* coming soon
+* Thanks to Chris Meyer, Bronwyn Beck, Andrew Rothman, and Sarah Hawley for their copy contributions and bingo square brainstorming.
