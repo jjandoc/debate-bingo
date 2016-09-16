@@ -122,6 +122,12 @@ import repubs from 'library/trump';
     if (e.keyCode === 27) {
       $('.dialog').removeClass('active').attr('aria-hidden', 'true');
     }
+  }).on('click', '.share-btn', e => {
+    e.preventDefault();
+    window.open($(e.currentTarget).attr('href'), '',
+        'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,' +
+        'width=600');
   });
+
 
 })(window, jQuery);

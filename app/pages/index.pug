@@ -1,5 +1,7 @@
 - var siteName = 'Political Bingo';
 - var metaDesc = `Make the presidential debates fun with these bingo cards covering Donald Trump and Hillary Clinton's favorite topics. Drinking optional!`;
+- var shareUrl = 'https://www.politicalbingo.com';
+- var tweetCopy = `Political bingo: this election isn’t a game, but you can make one out of the debates!`
 
 doctype html
 html(lang='en')
@@ -34,10 +36,10 @@ html(lang='en')
             a(href='https://www.hillaryclinton.com/donate/', target='_blank', data-tip='Donate').btn.btn-icon.tip
               i.fa.fa-dollar(aria-hidden='true')
               span.sr-only Donate to Hillary
-          li
-            button.btn.btn-icon.tip(data-tip='About')
-              i.fa.fa-question(aria-hidden='true')
-              span.sr-only About
+          // li
+          //   button.btn.btn-icon.tip(data-tip='About')
+          //     i.fa.fa-question(aria-hidden='true')
+          //     span.sr-only About
           li
             button.btn.btn-icon.refresh-all.tip(data-tip='Refresh Cards')
               i.fa.fa-refresh(aria-hidden='true')
@@ -77,15 +79,15 @@ html(lang='en')
           li
             | Share
           li
-            a(href='#', data-tip='Tweet', data-mode='top').btn.btn-icon.share-btn.tip
+            a(href=`https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetCopy)}&url=${encodeURIComponent(shareUrl)}`, data-tip='Tweet', data-mode='top').btn.btn-icon.share-btn.tip
               i.fa.fa-twitter(aria-hidden='true')
               span.sr-only Twitter
           li
-            a(href='#', data-tip='Share', data-mode='top').btn.btn-icon.share-btn.tip
+            a(href=`https://facebook.com/sharer.php?u=${encodeURIComponent(shareUrl)}`, data-tip='Share', data-mode='top').btn.btn-icon.share-btn.tip
               i.fa.fa-facebook(aria-hidden='true')
               span.sr-only Facebook
           li
-            a(href='#', data-tip='Share', data-mode='top').btn.btn-icon.share-btn.tip
+            a(href=`https://plus.google.com/share?url=${encodeURIComponent(shareUrl)}`, data-tip='Share', data-mode='top').btn.btn-icon.share-btn.tip
               i.fa.fa-google-plus(aria-hidden='true')
               span.sr-only Google+
     #cta(aria-hidden='true').dialog.cta-dialog

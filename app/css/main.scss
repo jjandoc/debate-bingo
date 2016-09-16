@@ -345,6 +345,10 @@ body {
 .page-footer {
   padding: 20px;
   text-align: center;
+
+  @include media($desktop) {
+    text-align: right;
+  }
 }
 
 .cta-dialog {
