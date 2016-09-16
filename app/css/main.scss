@@ -49,7 +49,7 @@ body {
     background: rgba($color-black, .2);
   }
 
-  .fa-events-icons-ready &.btn-icon {
+  &.btn-icon {
     height: 30px;
     padding: 5px 0;
   }
@@ -351,12 +351,11 @@ body {
   }
 }
 
-.cta-dialog {
+.dialog {
   background: #00a9e0;
   box-sizing: border-box;
   color: $color-white;
   padding: 40px 20px;
-  text-align: center;
   z-index: 10;
   @include position(fixed, 0 0 null 0);
   @include transform(translateY(-100%));
@@ -370,6 +369,31 @@ body {
     @include position(absolute, 10px 10px null null);
     float: right;
   }
+}
+
+.about-dialog {
+  max-height: 100vh;
+  overflow: auto;
+
+  .message {
+    margin: 0 auto 1em;
+    max-width: 50em;
+  }
+
+  .inline-list {
+    li {
+      margin: 0 10px 0 0;
+    }
+  }
+
+  .btn-inverted {
+    margin: 0;
+  }
+}
+
+.cta-dialog {
+  text-align: center;
+
 
   p {
     font-size: 20px;

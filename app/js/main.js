@@ -75,6 +75,8 @@ import repubs from 'library/trump';
     _.each(copyOptions, function(copyLine, i) {
       message += `<p class="cta-line-${i}">${_.shuffle(copyLine)[0]}</p>`;
     });
+    $('#about').removeClass('active').attr('aria-hidden', 'true');
+    $('.dialog').removeClass('active').attr('aria-hidden', 'true');
     $('#cta').addClass('active').removeAttr('aria-hidden', 'true')
         .find('.message').html(message);
     if (!app.hasBingoed(party)) {
@@ -127,7 +129,9 @@ import repubs from 'library/trump';
     window.open($(e.currentTarget).attr('href'), '',
         'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,' +
         'width=600');
+  }).on('click', '.show-about', () => {
+    $('#about').addClass('active').removeAttr('aria-hidden');
+  }).on('click', '.close-about', () => {
+    $('#about').removeClass('active').attr('aria-hidden', 'true');
   });
-
-
 })(window, jQuery);

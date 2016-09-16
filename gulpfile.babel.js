@@ -68,7 +68,8 @@ gulp.task('copy', () =>
     'app/static/**/*'
   ], {
     dot: true
-  }).pipe(gulp.dest('dist'))
+  })
+    .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'copy'}))
 );
 
@@ -148,7 +149,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
     // Note: this uses an unsigned certificate which on first access
     //       will present a certificate warning in the browser.
     // https: true,
-    server: ['.tmp', 'app'],
+    server: ['.tmp', 'app', 'app/static'],
     port: 3000
   });
 
