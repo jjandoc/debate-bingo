@@ -40,7 +40,7 @@ class BingoCard {
    */
   _init() {
     this._$el.on(BingoSquare.Event.SELECTED, e => {
-      if (this.isBingo(e.col, e.row) && !this._hasBingoed) {
+      if (this.isBingo(e.col, e.row)) {
         this._hasBingoed = true;
         this._$el.trigger(BingoCard.Event.BINGO);
       }

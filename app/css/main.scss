@@ -17,6 +17,7 @@ body {
   margin: 0;
   min-height: 100vh;
   padding: 0;
+  position: relative;
   @include display(flex);
   @include flex-direction(column);
 }
@@ -29,12 +30,13 @@ body {
   color: $color-black;
   cursor: pointer;
   display: inline-block;
-  line-height: 27.5px;
-  height: 30px;
+  font-size: 16px;
+  line-height: 17.5px;
   min-width: 30px;
-  padding: 0;
+  padding: 5px 10px;
   text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
   @include appearance(none);
   @include transition(all, 200ms);
 
@@ -45,6 +47,37 @@ body {
 
   &:hover {
     background: rgba($color-black, .2);
+  }
+
+  .fa-events-icons-ready &.btn-icon {
+    height: 30px;
+    padding: 5px 0;
+  }
+}
+
+.btn-large {
+  border-width: 4px;
+  font-size: 16px;
+  font-weight: 900;
+  padding: 10px 20px;
+}
+
+.btn-inverted {
+  border-color: $color-white;
+  color: $color-white;
+  margin-left: 10px;
+
+  &:link,
+  &:visited {
+    color: $color-white;
+  }
+
+  &:hover {
+    background: rgba($color-white, .2);
+  }
+
+  &[disabled] {
+    opacity: .5;
   }
 }
 
@@ -161,7 +194,7 @@ body {
     overflow: hidden;
   }
 
-  .bingoed & {
+/*  .bingoed & {
     position: relative;
 
     &::before {
@@ -184,7 +217,7 @@ body {
         font-size: 160px;
       }
     }
-  }
+  }*/
 }
 
 .card-header {
@@ -218,17 +251,7 @@ body {
 
 .card-controls {
   .btn {
-    border-color: $color-white;
-    color: $color-white;
     margin-left: 10px;
-
-    &:hover {
-      background: rgba($color-white, .2);
-    }
-
-    &[disabled] {
-      opacity: .5;
-    }
   }
 }
 
@@ -322,4 +345,52 @@ body {
 .page-footer {
   padding: 20px;
   text-align: center;
+}
+
+.cta-dialog {
+  background: #00a9e0;
+  box-sizing: border-box;
+  color: $color-white;
+  padding: 40px 20px;
+  text-align: center;
+  z-index: 10;
+  @include position(fixed, 0 0 null 0);
+  @include transform(translateY(-100%));
+  @include transition(all 400ms ease-in-out);
+
+  &.active {
+    @include transform(translateY(0));
+  }
+
+  .btn-close {
+    @include position(absolute, 10px 10px null null);
+    float: right;
+  }
+
+  p {
+    font-size: 20px;
+    margin: 0 0 .5em;
+    text-align: left;
+
+    @include media($tablet) {
+      text-align: center;
+    }
+  }
+
+  .cta-line-0 {
+    font-size: 80px;
+    font-weight: 900;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    @include transform(rotate(-3deg));
+
+    @include media($tablet) {
+      font-size: 160px;
+    }
+  }
+}
+
+.cta-controls {
+  margin-top: 1em;
 }

@@ -2,8 +2,8 @@
 import jQuery from 'jquery';
 import _ from 'underscore';
 import BingoCard from 'components/bingo-card';
-import clintonTerms from 'terms/clinton';
-import trumpTerms from 'terms/trump';
+import dems from 'library/clinton';
+import repubs from 'library/trump';
 
 (function(window, $) {
   'use strict';
@@ -62,11 +62,29 @@ import trumpTerms from 'terms/trump';
 
   // Your custom JavaScript goes here
   const app = {
-    cards: []
+    cards: [],
+    bingoes: [],
+    hasBingoed: function(party) {
+      return (this.bingoes.indexOf(party) >= 0);
+    }
   };
 
+  function displayMessage(party) {
+    let message = '';
+    const copyOptions = party === 'dems' ? dems.cta : repubs.cta;
+    _.each(copyOptions, function(copyLine, i) {
+      message = message +
+          `<p class="cta-line-${i}">${_.shuffle(copyLine)[0]}</p>`;
+    });
+    $('#cta').addClass('active').removeAttr('aria-hidden', 'true')
+        .find('.message').html(message);
+    if (!app.hasBingoed(party)) {
+      app.bingoes.push(party);
+    }
+  }
+
   $('.card').each(function() {
-    const terms = $(this).hasClass('dems') ? clintonTerms : trumpTerms;
+    const terms = $(this).hasClass('dems') ? dems.terms : repubs.terms;
     const card = new BingoCard($(this).find('.card-body')[0], terms);
     $(this).on('click', '.card-reset', e => {
       $(e.currentTarget).attr('disabled', 'disabled').trigger('mouseout');
@@ -77,6 +95,10 @@ import trumpTerms from 'terms/trump';
       $(this).removeClass('bingoed');
     }).on(BingoCard.Event.BINGO, () => {
       $(this).addClass('bingoed');
+      const party = $(this).hasClass('dems') ? 'dems' : 'repubs';
+      // if (!app.hasBingoed(party)) {
+        displayMessage(party);
+      // }
     }).on('squareSelected', () => {
       if ($(this).find('.bingo-square.selected').length > 0) {
         $(this).find('.card-reset').removeAttr('disabled');
@@ -91,10 +113,19 @@ import trumpTerms from 'terms/trump';
     e.preventDefault();
     _.each(app.cards, card => {
       card.refresh();
+      $('.card').removeClass('bingoed');
     });
   }).on('click', '.print', e => {
     e.preventDefault();
     window.print();
+  }).on('click', '.close-cta', e => {
+    e.preventDefault();
+    $('#cta').removeClass('active').attr('aria-hidden', 'true');
+  }).on('keyup.closeMeerkat', e => {
+    // Escape key
+    if (e.keyCode === 27) {
+      $('.dialog').removeClass('active').attr('aria-hidden', 'true');
+    }
   });
 
 })(window, jQuery);

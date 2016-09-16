@@ -26,6 +26,7 @@ html(lang='en')
     meta(name='msapplication-TileColor', content='#2F3BA2')
     // Color the status bar on mobile devices
     meta(name='theme-color', content='#2F3BA2')
+    script(src='https://use.fontawesome.com/159a9047f0.js')
     link(href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400|Roboto:400,900', rel='stylesheet', type='text/css')
     link(href='/css/main.css', rel='stylesheet', type='text/css')
   body
@@ -34,19 +35,19 @@ html(lang='en')
       nav.page-nav
         ul.inline-list
           li
-            a(href='https://www.hillaryclinton.com/donate/', data-tip='Donate').btn.tip
+            a(href='https://www.hillaryclinton.com/donate/', target='_blank', data-tip='Donate').btn.btn-icon.tip
               i.fa.fa-dollar(aria-hidden='true')
               span.sr-only Donate
           li
-            button.btn.tip(data-tip='About')
+            button.btn.btn-icon.tip(data-tip='About')
               i.fa.fa-question(aria-hidden='true')
               span.sr-only About
           li
-            button.btn.refresh-all.tip(data-tip='Refresh Cards')
+            button.btn.btn-icon.refresh-all.tip(data-tip='Refresh Cards')
               i.fa.fa-refresh(aria-hidden='true')
-              span.sr-only Refresh all
+              span.sr-only Refresh
           li
-            button.btn.print.tip(data-tip='Print')
+            button.btn.btn-icon.print.tip(data-tip='Print')
               i.fa.fa-print(aria-hidden='true')
               span.sr-only Print
     main.page-content
@@ -55,10 +56,10 @@ html(lang='en')
           header.card-header
             h2.card-title Clinton
             .card-controls
-              button.card-reset.btn.tip(data-tip='Clear', disabled)
+              button.card-reset.btn.btn-icon.btn-inverted.tip(data-tip='Clear', disabled)
                 i.fa.fa-undo(aria-hidden='true')
                 span.sr-only Clear
-              button.card-refresh.btn.tip(data-tip='Refresh')
+              button.card-refresh.btn.btn-icon.btn-inverted.tip(data-tip='Refresh')
                 i.fa.fa-refresh(aria-hidden='true')
                 span.sr-only Refresh
           #dem-card.card-body
@@ -67,10 +68,10 @@ html(lang='en')
           header.card-header
             h2.card-title Trump
             .card-controls
-              button.card-reset.btn.tip(data-tip='Clear', disabled)
+              button.card-reset.btn.btn-icon.btn-inverted.tip(data-tip='Clear', disabled)
                 i.fa.fa-undo(aria-hidden='true')
                 span.sr-only Clear
-              button.card-refresh.btn.tip(data-tip='Refresh')
+              button.card-refresh.btn.btn-icon.btn-inverted.tip(data-tip='Refresh')
                 i.fa.fa-refresh(aria-hidden='true')
                 span.sr-only Refresh
           #gop-card.card-body
@@ -80,19 +81,25 @@ html(lang='en')
           li
             | Share
           li
-            a(href='#', data-tip='Tweet', data-mode='top').btn.share-btn.tip
-              i.fa.fa-twitter
+            a(href='#', data-tip='Tweet', data-mode='top').btn.btn-icon.share-btn.tip
+              i.fa.fa-twitter(aria-hidden='true')
               span.sr-only Twitter
           li
-            a(href='#', data-tip='Share', data-mode='top').btn.share-btn.tip
-              i.fa.fa-facebook
+            a(href='#', data-tip='Share', data-mode='top').btn.btn-icon.share-btn.tip
+              i.fa.fa-facebook(aria-hidden='true')
               span.sr-only Facebook
           li
-            a(href='#', data-tip='Share', data-mode='top').btn.share-btn.tip
-              i.fa.fa-google-plus
+            a(href='#', data-tip='Share', data-mode='top').btn.btn-icon.share-btn.tip
+              i.fa.fa-google-plus(aria-hidden='true')
               span.sr-only Google+
-
-    script(src='https://use.fontawesome.com/159a9047f0.js')
+    #cta(aria-hidden='true').dialog.cta-dialog
+      button.close-cta.btn-close.btn.btn-inverted.btn-icon
+        i.fa.fa-close(aria-hidden='true')
+        span.sr-only Close
+      .message
+      .cta-controls
+        a(href='https://www.hillaryclinton.com/donate/', target='_blank', data-tip='Donate').btn.btn-inverted.btn-large.tip.close-cta Donate
+        button.btn.btn-inverted.btn-large.refresh-all.close-cta Play Again
     script(src='/js/main.min.js')
     // Add your site or app content here
     // Google Analytics: change UA-XXXXX-X to be your site's ID
