@@ -1,31 +1,27 @@
-- var siteName = '2016 Debate Bingo';
+- var siteName = 'Political Bingo';
+- var metaDesc = `Make the presidential debates fun with these bingo cards covering Donald Trump and Hillary Clinton's favorite topics. Drinking optional!`;
 
 doctype html
 html(lang='en')
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='description', content='')
+    meta(property='og:site_name', content=siteName)
+    meta(name='description', content=metaDesc)
+    meta(property='og:description' content=metaDesc)
     meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(property='og:image', content='')
     title #{siteName}
     // Disable tap highlight on IE
     meta(name='msapplication-tap-highlight', content='no')
-    // Web Application Manifest
-    link(rel='manifest', href='manifest.json')
-    // Add to homescreen for Chrome on Android
-    meta(name='mobile-web-app-capable', content='yes')
-    meta(name='application-name', content=siteName)
-    link(rel='icon', sizes='192x192', href='/img/touch/chrome-touch-icon-192x192.png')
-    // Add to homescreen for Safari on iOS
-    meta(name='apple-mobile-web-app-capable', content='yes')
-    meta(name='apple-mobile-web-app-status-bar-style', content='black')
-    meta(name='apple-mobile-web-app-title', content='Web Starter Kit')
-    link(rel='apple-touch-icon', href='/img/touch/apple-touch-icon.png')
-    // Tile icon for Win8 (144x144 + tile color)
-    meta(name='msapplication-TileImage', content='/img/touch/ms-touch-icon-144x144-precomposed.png')
-    meta(name='msapplication-TileColor', content='#2F3BA2')
-    // Color the status bar on mobile devices
-    meta(name='theme-color', content='#2F3BA2')
+
+    link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon.png")
+    link(rel="icon", type="image/png", href="/favicon-32x32.png", sizes="32x32")
+    link(rel="icon", type="image/png", href="/favicon-16x16.png", sizes="16x16")
+    link(rel="manifest", href="/manifest.json")
+    link(rel="mask-icon", href="/safari-pinned-tab.svg", color="#00a9e0")
+    meta(name="theme-color", content="#ffffff")
+
     script(src='https://use.fontawesome.com/159a9047f0.js')
     link(href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400|Roboto:400,900', rel='stylesheet', type='text/css')
     link(href='/css/main.css', rel='stylesheet', type='text/css')

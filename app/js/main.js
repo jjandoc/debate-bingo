@@ -73,8 +73,7 @@ import repubs from 'library/trump';
     let message = '';
     const copyOptions = party === 'dems' ? dems.cta : repubs.cta;
     _.each(copyOptions, function(copyLine, i) {
-      message = message +
-          `<p class="cta-line-${i}">${_.shuffle(copyLine)[0]}</p>`;
+      message += `<p class="cta-line-${i}">${_.shuffle(copyLine)[0]}</p>`;
     });
     $('#cta').addClass('active').removeAttr('aria-hidden', 'true')
         .find('.message').html(message);
