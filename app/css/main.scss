@@ -2,7 +2,6 @@
 @import 'neat';
 
 @import 'global/normalize';
-@import 'vendor/tipr';
 
 $landscape-mobile: new-breakpoint(min-width 640px);
 $tablet: new-breakpoint(min-width 768px);

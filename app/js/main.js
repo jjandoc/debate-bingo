@@ -5,9 +5,6 @@ import BingoCard from 'components/bingo-card';
 import clintonTerms from 'terms/clinton';
 import trumpTerms from 'terms/trump';
 
-window.jQuery = jQuery;
-require('vendor/tipr');
-
 (function(window, $) {
   'use strict';
 
@@ -100,5 +97,4 @@ require('vendor/tipr');
     window.print();
   });
 
-  $('.tip').tipr();
 })(window, jQuery);
