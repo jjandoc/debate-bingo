@@ -96,7 +96,7 @@ import repubs from 'library/trump';
       $(this).addClass('bingoed');
       const party = $(this).hasClass('dems') ? 'dems' : 'repubs';
       // if (!app.hasBingoed(party)) {
-        displayMessage(party);
+      displayMessage(party);
       // }
     }).on('squareSelected', () => {
       if ($(this).find('.bingo-square.selected').length > 0) {
@@ -108,17 +108,14 @@ import repubs from 'library/trump';
     app.cards.push(card);
   });
 
-  $(document).on('click', '.refresh-all', e => {
-    e.preventDefault();
+  $(document).on('click', '.refresh-all', () => {
     _.each(app.cards, card => {
       card.refresh();
       $('.card').removeClass('bingoed');
     });
-  }).on('click', '.print', e => {
-    e.preventDefault();
+  }).on('click', '.print', () => {
     window.print();
-  }).on('click', '.close-cta', e => {
-    e.preventDefault();
+  }).on('click', '.close-cta', () => {
     $('#cta').removeClass('active').attr('aria-hidden', 'true');
   }).on('keyup.closeMeerkat', e => {
     // Escape key

@@ -277,7 +277,7 @@ body {
 
   @include media($tablet) {
     font-size: 16px;
-    height: 100px;
+    height: 90px;
     padding: 5px;
   }
 
@@ -393,4 +393,16 @@ body {
 
 .cta-controls {
   margin-top: 1em;
+
+  .btn {
+    display: block;
+    margin: 0 0 10px;
+    width: 100%;
+
+    @include media($tablet) {
+      display: inline-block;
+      margin: 0 5px;
+      width: auto;
+    }
+  }
 }
