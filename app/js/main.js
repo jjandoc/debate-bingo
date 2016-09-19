@@ -135,15 +135,15 @@ import repubs from 'library/trump';
   }).on('click', '.close-about', () => {
     $('#about').removeClass('active').attr('aria-hidden', 'true');
   }).on(BingoCard.Event.BINGO, e => {
-    ga('send', 'event', 'Bingo', e.cardName, '9/26 Debate');
+    window.ga('send', 'event', 'Bingo', e.cardName, '9/26 Debate');
   }).on('squareSelected', e => {
-    ga('send', 'event', 'Square Selected', e.term, '9/26 Debate');
+    window.ga('send', 'event', 'Square Selected', e.term, '9/26 Debate');
   }).on('click', '.share-btn', e => {
     const socialNetwork = $(e.currentTarget).text();
     const socialAction = socialNetwork === 'Twitter' ? 'Tweet' : 'Share';
     const socialTarget = 'https://www.politicalbingo.com';
-    ga('send', 'social', socialNetwork, socialAction, socialTarget);
+    window.ga('send', 'social', socialNetwork, socialAction, socialTarget);
   }).on('click', '.donation-link', () => {
-    ga('send', 'event', 'Donation link', 'Click', '9/26 Debate');
+    window.ga('send', 'event', 'Donation link', 'Click', '9/26 Debate');
   });
 })(window, jQuery);
