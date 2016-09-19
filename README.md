@@ -72,4 +72,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Thanks to Chris Meyer, Bronwyn Beck, Andrew Rothman, and Sarah Hawley for their copy contributions and bingo square brainstorming.
+* Thanks to Chris Meyer, Bronwyn Beck, Andrew Rothman, and Sarah Hawley for their copy contributions and bingo square brainstorming. Thanks to Wael Kanj for analytics advice.
