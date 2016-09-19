@@ -70,6 +70,7 @@ class BingoSquare {
       const event = new $.Event(eventType);
       event.col = this.col();
       event.row = this.row();
+      event.term = this.name();
 
       if (this._selected) {
         this.$el.addClass(BingoSquare.CssClass.SELECTED);

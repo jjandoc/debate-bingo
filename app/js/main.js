@@ -86,7 +86,8 @@ import repubs from 'library/trump';
 
   $('.card').each(function() {
     const terms = $(this).hasClass('dems') ? dems.terms : repubs.terms;
-    const card = new BingoCard($(this).find('.card-body')[0], terms);
+    const card = new BingoCard($(this).find('.card-body')[0], terms,
+        $(this).find('.card-title').text());
     $(this).on('click', '.card-reset', e => {
       $(e.currentTarget).attr('disabled', 'disabled').trigger('mouseout');
       card.reset();
@@ -133,5 +134,16 @@ import repubs from 'library/trump';
     $('#about').addClass('active').removeAttr('aria-hidden');
   }).on('click', '.close-about', () => {
     $('#about').removeClass('active').attr('aria-hidden', 'true');
+  }).on(BingoCard.Event.BINGO, e => {
+    ga('send', 'event', 'Bingo', e.cardName, '9/26 Debate');
+  }).on('squareSelected', e => {
+    ga('send', 'event', 'Square Selected', e.term, '9/26 Debate');
+  }).on('click', '.share-btn', e => {
+    const socialNetwork = $(e.currentTarget).text();
+    const socialAction = socialNetwork === 'Twitter' ? 'Tweet' : 'Share';
+    const socialTarget = 'https://www.politicalbingo.com';
+    ga('send', 'social', socialNetwork, socialAction, socialTarget);
+  }).on('click', '.donation-link', () => {
+    ga('send', 'event', 'Donation link', 'Click', '9/26 Debate');
   });
 })(window, jQuery);

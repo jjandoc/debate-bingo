@@ -13,9 +13,10 @@ class BingoCard {
    * @param {HTMLElement} el - An element that contains a table of data and
    *   will act as parent container for the chart.
    * @param {Array.<string>} terms - Array of possible bingo terms.
+   * @param {string} name - The name of the card.
    * @constructor
    */
-  constructor(el, terms) {
+  constructor(el, terms, name) {
     /** @private {HTMLElement} Bingo card element. */
     this._el = el;
 
@@ -24,6 +25,9 @@ class BingoCard {
 
     /** @private {Array.<string>} Possible bingo terms. */
     this._possibleTerms = terms;
+
+    /** @private {string} The name of the card. */
+    this._name = name;
 
     /** @private {Array.<BingoSquare>>} Colleciton of bingo squares. */
     this._squares = [];
@@ -42,7 +46,9 @@ class BingoCard {
     this._$el.on(BingoSquare.Event.SELECTED, e => {
       if (this.isBingo(e.col, e.row)) {
         this._hasBingoed = true;
-        this._$el.trigger(BingoCard.Event.BINGO);
+        const event = new $.Event(BingoCard.Event.BINGO);
+        event.cardName = this._name;
+        this._$el.trigger(event);
       }
     });
     this.refresh();
