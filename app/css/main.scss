@@ -421,8 +421,11 @@ body {
 
   .card-header,
   .bingo-square.free {
-    background: $color-white;
-    color: $color-black;
+    .dems &,
+    .repubs & {
+      background: $color-white;
+      color: $color-black;
+    }
   }
 
   .bingo-square {
@@ -432,6 +435,25 @@ body {
 
     &.selected::before {
       content: '';
+    }
+  }
+
+  @supports (-webkit-print-color-adjust: exact) {
+    body {
+      -webkit-print-color-adjust: exact;
+    }
+
+    .card-header,
+    .bingo-square.free {
+      .dems & {
+        background: $color-blue;
+        color: $color-white;
+      }
+
+      .repubs & {
+        background: $color-red;
+        color: $color-white;
+      }
     }
   }
 }
